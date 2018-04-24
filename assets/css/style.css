@@ -1,0 +1,27 @@
+.mainheader {
+	background: rgba(235, 235, 229, 0.397);
+}
+
+.backdrop {
+	background-image: '../images/cartoon.jpg';
+	background: beige;
+}
+
+#computerGuess {
+	background: rgb(190, 248, 252);
+	height: 3em; 
+}
+
+#wins {
+	background: rgb(156, 252, 126);
+	height: 3em; 
+}
+
+#losses {
+	background: rgba(253, 49, 49, 0.466);
+	height: 3em; 
+}
+
+#gamearea {
+	background: rgba(252, 248, 190, 0.788);
+}

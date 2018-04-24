@@ -34,8 +34,7 @@ In this assignment, you'll create one of two possible computer games: Word Guess
 
 7. Note: There's no shame if you'd prefer submitting Psychic—it's still a proper challenge.
 
-8. Push your selected game to Github Pages.
-
+8. Push your selected game to [Github Pages](https://smithwebtek.github.io/word-guess/)
 
 ## Option One: Psychic Game (Basic)
 
