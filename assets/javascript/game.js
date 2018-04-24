@@ -1,5 +1,5 @@
 var computerLetter = ''
-var userGuess = ''
+var userGuess = document.getElementById('user-choice')
 var wins = "asdf"
 var losses = 0
 var userGuessesLeft = 26
@@ -22,9 +22,10 @@ computerGuess = () => {
 	console.log(guess(range));
 }
 
-userGuess = () => {
-	console.log(document.onkeyup)
+document.onkeyup = (event) => {
+	userGuess.textContent = event.key.toUpperCase()
 }
+
 
 
 
