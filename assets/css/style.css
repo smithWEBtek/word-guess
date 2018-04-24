@@ -1,27 +1,33 @@
+
+#nerdguy {	
+	background-image: url("../images/cartoon.jpg");
+	background-repeat: repeat-x;
+	height: 11em;
+}
 .mainheader {
 	background: rgba(235, 235, 229, 0.397);
 }
 
-.backdrop {
-	background-image: '../images/cartoon.jpg';
-	background: beige;
+#backdrop {
+	background: rgba(235, 235, 229, 0.397);
 }
 
 #computerGuess {
 	background: rgb(190, 248, 252);
-	height: 3em; 
+	height: 3.5em; 
 }
 
 #wins {
 	background: rgb(156, 252, 126);
-	height: 3em; 
+	height: 3.5em; 
 }
 
 #losses {
 	background: rgba(253, 49, 49, 0.466);
-	height: 3em; 
+	height: 3.5em; 
 }
 
-#gamearea {
-	background: rgba(252, 248, 190, 0.788);
+#wordarea {
+	background: rgba(85, 81, 81, 0.226);
+	height: 3.5em; 
 }

@@ -14,23 +14,32 @@
 	 crossorigin="anonymous">
 
 
-	<title>Nerd Word Game!</title>
+	<title>Nerd Werd</title>
 </head>
 
 <body>
 	<div class="container">
+		<div id="nerdguy"></div>
 		<h2 class="mainheader">Nerd Word Game!</h2>
 
-		<div class="backdrop">
+		<div id="backdrop">
 			<div id="computerGuess">
-				<p>Guess what letter I'm thinking of...</p>
+				<p>Guess what letter I'm thinking of...
+					<br /> Press any key to get started...</p>
 			</div>
-			<div id="wins">
-				<p>Wins: (# of times the user has guessed the letter correctly)</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<p>Wins: (# of times the user has guessed the letter correctly, up to the length of the current word.)</p>
+						<div id="wins"></div>
+					</div>
+					<div class="col-6">
+						<p>Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)</p>
+						<div id="losses"></div>
+					</div>
+				</div>
 			</div>
-			<div id="losses">
-				<p>Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)</p>
-			</div>
+
 			<div id="guessesLeft">
 				<p>Guesses Left: (# of guesses left. This will update)</p>
 			</div>
@@ -40,6 +49,11 @@
 		</div>
 
 
+		<div id="wordarea">
+			<p>Word Area: - - - - - - - -</p>
+			<br />
+
+		</div>
 		<div id="gamearea">
 			<h3>Instructions</h3>
 			<ul>
