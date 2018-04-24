@@ -14,20 +14,27 @@
 
 #computerGuess {
 	background: rgb(190, 248, 252);
-	height: 3.5em; 
+	height: 2.5em; 
 }
 
 #wins {
 	background: rgb(156, 252, 126);
-	height: 3.5em; 
+	height: 2.5em; 
 }
 
 #losses {
 	background: rgba(253, 49, 49, 0.466);
-	height: 3.5em; 
+	height: 2.5em; 
 }
 
-#wordarea {
+#game-board {
 	background: rgba(85, 81, 81, 0.226);
-	height: 3.5em; 
+	height: 1.5em; 
+}
+
+#user-guess {
+	background: rgba(167, 119, 119, 0.226);
+	height: 1.5em; 
+	width: 1.5em; 
+	margin:auto;
 }
