@@ -9,42 +9,50 @@ var gameBoardDisplay = document.getElementById('game-board')
 var gameBoard = ['___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ']
 
 
-startGame = () => {
-	startingGameBoard()
-	getComputerGuess()
-	document.onkeyup = (event) => {
-		document.getElementById('user-guess').textContent = event.key.toUpperCase()
-		event.preventDefault()
-		userGuess = document.getElementById('user-guess').textContent
-		userGuessesSoFar.push(userGuess)
-		console.log('userGuessesSoFar', userGuessesSoFar);
-		updateUserGuessesDisplay()
-		matchGuesses()
+play = () => {
+	if (word === "--------") {
+		endGame()
+	} else {
+		getComputerGuess()
+		document.onkeyup = (event) => {
+			document.getElementById('user-guess').textContent = event.key.toUpperCase()
+			event.preventDefault()
+
+			userGuess = document.getElementById('user-guess').textContent
+			userGuessesSoFar.push(userGuess)
+			console.log('userGuessesSoFar', userGuessesSoFar);
+			updateUserGuessesDisplay()
+			matchGuesses()
+		}
 	}
 }
 
 startingGameBoard = () => {
 	gameBoard = ['___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ',]
-	updateGameBoard()
-}
-
-updateGameBoard = () => {
-	gameBoard[userGuess] = word[userGuess]
-	gameBoardDisplay.textContent = gameBoard
 }
 
 getComputerGuess = () => {
-	let index = Math.floor(Math.random() * Math.floor(word.length - 1));
-	computerGuess = word.split('').slice()[index];
-	console.log('computerGuess: ', computerGuess);
-	return word.split('').slice()[index];
+	let letters = word.split('').filter((element, index) => element != '-')
+	let letter = letters[Math.floor(Math.random() * letters.length)];
+	let index = word.split('').findIndex(el => el === letter)
+	computerGuess = word[index]
+	console.log('index', index);
+	console.log('computerGuess', computerGuess);
 }
 
 matchGuesses = () => {
-	if (userGuess.textContent == computerGuess) {
-		updateGameBoard();
+	let updatedWord = []
+	if (userGuess == computerGuess) {
+		let index = word.split('').findIndex(el => el === userGuess)
+		gameBoard[index] = userGuess
+		gameBoardDisplay.textContent = gameBoard
+		updatedWord = word.split('')
+		updatedWord[index] = '-'
+		word = updatedWord.join('')
+		console.log('word: ', word);
+		play()
 	} else {
-		losses++
+		play()
 	}
 }
 
@@ -52,4 +60,9 @@ updateUserGuessesDisplay = () => {
 	document.getElementById('guessesSoFar').textContent = userGuessesSoFar;
 }
 
-startGame()
+endGame = () => {
+	gameBoardDisplay.textContent = "Game over."
+}
+
+startingGameBoard()
+play()
