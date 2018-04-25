@@ -8,10 +8,37 @@ var word = 'ALPHABET'
 var gameBoardDisplay = document.getElementById('game-board')
 var gameBoard = ['___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ', '___ ']
 
+// play starts
+// board is blank
+// word is full
+// computer guesses from existing array of word letters
+
+// user types a guess
+// userGuess is compared to computerGuess
+// if matched:
+// gameBoard is updated
+// word is updated with replaced character "-"
+
+// win is evaluated:
+// (if word === "------") 
+// endGame()
+// resetGameBoard()
+// show Game Over message
+// else (if not a win and not game ended)
+// computerGuess is updated
+// else
+// userGuessesSoFar is incremented by 1
+// gameBoard remains unchanged
+
+
 
 play = () => {
-	if (word === "--------") {
-		endGame()
+	until(word === "--------") {
+		play()
+		if (userGuess === computerGuess) {
+
+		}
+
 	} else {
 		getComputerGuess()
 		document.onkeyup = (event) => {
@@ -50,7 +77,6 @@ matchGuesses = () => {
 		updatedWord[index] = '-'
 		word = updatedWord.join('')
 		console.log('word: ', word);
-		play()
 	} else {
 		play()
 	}
